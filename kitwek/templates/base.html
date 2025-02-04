@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tHe kalenJIns</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+</head>
+</head>
+<body>
+    <header>
+        <a href="{% url 'home' %}" class="brand-link-color">
+            <div class="brand">
+                <h1>t<span class="title-span">H</span>e kalen<span class="title-span">JI</span>ns</h1>
+            </div>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'clans_list' %}">Clans</a></li>
+                <li><a href="{% url 'origin' %}">Origin</a></li>
+                <li><a href="{% url 'quote' %}">Quotes</a></li>
+                
+                {% if user.is_authenticated %}
+                    <!-- If user is authenticated, show the Profile link instead of +Join -->
+                    <li><a href="{% url 'profile_user_by_id' id=user.id %}">Profile</a></li>
+                    
+
+                {% else %}
+                    <!-- If user is not authenticated, show the Join link -->
+                    <li><a href="{% url 'sign_up' %}">+Join</a></li>
+                {% endif %}
+
+
+
+                
+            </ul>
+        </nav>
+        
+    </header>
+
+    
+
+    
+    {% block content %}
+        <!-- Page-specific content will go here -->
+    {% endblock %}
+            <!-- Logout form -->
+                   
+     <form action="{% url 'logout' %}" method="POST" style="display:inline;">
+                   
+         {% csrf_token %}
+                   
+         <button type="submit" class="btn btn-danger">Logout</button>
+                   
+     </form>
+     <!-- Footer Section -->
+     <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a> 
+            <a href="#">Privacy Policy</a>  
+            <a href="#">Terms and Conditions</a>
+   
+        </div>
+           <div class="footer-bottom">
+               <p>&copy; 2024 TSCSwaps Konnect. All rights reserved.</p>
+           </div>
+    </footer>
+       
+    {% load static %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

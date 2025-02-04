@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile </title>
+     
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+     {% load custom_filters %}
+
+
+</head>
+<body>
+
+    <div class="profile-container">
+        <div class="profile-header text-center">
+            <!-- Profile Picture -->
+            <div class="profile-pic-container">
+                {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture.url }}" alt="Profile Picture" class="profile-pic">
+                {% else %}
+                    <img src="{% static 'images/default-profile.jpg' %}" alt="Default Profile Picture" class="profile-pic">
+                {% endif %}
+            </div>
+            <a href="{% url 'profile_user_by_id' id=user.id %}">
+                <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+            </a>
+
+            <p><strong>Email:</strong> {{ user.email|hide_email }}</p>
+
+        </div>
+    
+        <div class="profile-details">
+            <h3>Personal Information</h3>
+            <ul>
+                <li><strong>Gender:</strong> {{ user.gender }}</li>
+                <li><strong>Birthday:</strong> {{ user.date_of_birth }}</li>
+                <li><strong>Phone Number:</strong> {{ user.phone_number }}</li>
+                
+            </ul>
+    
+            <h3>Location</h3>
+            <ul>
+                <li><strong>Current County:</strong> {{ user.current_county }}</li>
+                <li><strong>Home County:</strong> {{ user.home_county }}</li>
+            </ul>
+        </div>
+    
+        <div class="text-center mt-4">
+            <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+        </div>
+    </div>
+  
+
+  
+
+
+  {% load static %}
+ <script src="{% static 'js/scripts.js' %}"></script>
+  
+</body>
+</html>
+{% endblock %}

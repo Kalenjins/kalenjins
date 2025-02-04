@@ -1,0 +1,1643 @@
+:root {
+    --primary-color: #0067b3; /* Blue Grotto */
+    --secondary-color: #40b0df; /* Green */
+    --accent-color: #ffd53d; /* Red */
+    --background-color: #0000a3; /* Light Gray */
+    --text-color: #2c3e50; /* Dark Gray */
+}
+
+
+ /* COMMENTS CSS START. SUNDAY, 12-01-2025 */
+
+              /*(a) load-more comments btn start */
+#load-more-comments {
+    display: inline-block;
+    padding: 10px 20px; /* Add some padding for a button-like feel */
+    text-align: center;
+    font-size: 18px; /* Increase the font size */
+    font-weight: bold;
+    color: #f0f0f0; /* Make the text blue */
+    text-decoration: none; /* Remove underline */
+    background-color:#007BFF ; /* Light gray background */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    width: 50%; /* Center align by setting width */
+    margin: 0 auto; /* Center the element horizontally */
+    text-align: center; /* Ensure the text is centered inside the link */
+}
+
+#load-more-comments:hover {
+    background-color: #007BFF; /* Dark blue background on hover */
+    color: white; /* White text on hover */
+    cursor: pointer; /* Pointer cursor for better user experience */
+}
+
+#load-more-comments:focus {
+    outline: none; /* Remove the default focus outline */
+}
+
+#load-more-comments[style="display: none;"] {
+    display: none; /* Ensure no more comments link is hidden when not needed */
+}
+@media (max-width: 768px) {
+    #load-more-comments {
+        font-size: 16px; /* Slightly reduce the font size */
+        padding: 8px 15px; /* Reduce padding */
+        width: 60%; /* Increase width to use more space */
+    }
+}
+
+/* For smaller mobile devices (screen width 450px and below) */
+@media (max-width: 450px) {
+    #load-more-comments {
+        font-size: 14px; /* Reduce the font size further */
+        padding: 6px 12px; /* Further reduce padding */
+        width: 80%; /* Increase width to 80% for better visibility */
+    }
+}
+              /*(a) load-more comments btn end */
+
+.like-link {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    color: var(--primary-color); /* Set the text color to a blue shade */
+    padding: 5px 10px; /* Add some padding around the link */
+    border-radius: 5px; /* Round the corners slightly */
+    
+ }
+
+ @media (max-width: 768px) {
+    .like-link {
+        font-size: 16px; /* Reduce font size */
+        padding: 4px 8px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Media Query for screens 450px or smaller */
+@media (max-width: 450px) {
+    .like-link {
+        font-size: 14px; /* Further reduce font size */
+        padding: 3px 6px; /* Further adjust padding for smaller screens */
+    }
+}
+            
+              
+ /* COMMENTS CSS START. SUNDAY, 12-01-2025 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.buttonz-container {
+    display: flex;
+    gap: 20px; /* Adds space between the buttons */
+    justify-content: flex-start; /* Aligns the buttons to the left */
+    margin-top: 10px; /* Add a small space above the buttons */
+  }
+  
+  /* Style the buttons */
+  .likez-btn, .commentz-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .likez-btn:hover, .commentz-btn:hover {
+    background-color: #007bff; /* Change button background on hover */
+  }
+
+
+
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    
+}
+
+.title-span {
+    color: var(--accent-color);
+}
+.brand-link-color{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {color: #28a745;
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    
+}
+
+.post {color: #28a745;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #696969;
+}
+.see-more-txt{
+    text-decoration: none;
+    color: #333;
+}
+.responsive-image{
+
+    width: 30%;
+    height: 30%;
+    max-width: 100%; /* Ensures image never exceeds container width */
+}
+
+.actions {
+    display: flex;
+    flex-direction: row; /* This is optional since 'row' is the default */
+    justify-content: space-between; /* This will distribute the items evenly */
+}
+.share-btn{
+    width: 8rem;
+    padding: auto;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 450px */
+@media (max-width: 450px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .title-span {
+        font-size: 50px; /* Smaller font size for title */
+        
+    }
+    .brand-link-color{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    nav ul li {
+        margin: 0 6px; /* Smaller margin between links */
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Smaller font size for links */
+    }
+    .see-more-txt{
+        text-decoration: none;
+        color: #333;
+    }
+    .responsive-image{
+
+        width: 100%;
+        height: 100%;
+        max-width: 100%; /* Ensures image never exceeds container width */
+    }
+
+    main {
+        padding: 15px; /* Less padding in the main content */
+        margin-top: 9.8rem;
+    }
+
+    .post {
+        margin-bottom: 15px;
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .actions {
+        flex-direction: row; /* Stack actions vertica lly on small screens */
+        align-items: flex-start;
+    }
+}
+
+/* For screens 450px and larger but less than 768px */
+@media (min-width: 451px) and (max-width: 767px) {
+    header {
+        padding: 8px 0;
+    }
+
+    .title-span {
+        font-size: 20px; /* Slightly smaller font size for title */
+    }
+    .brand-link-color{
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+
+    nav ul li {
+        margin: 0 15px; /* Slightly smaller margin between links */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Slightly smaller font size for links */
+    }
+
+    main {
+        padding: 18px; /* Slightly reduced padding */
+    }
+    .see-more-txt{
+        text-decoration: none;
+        color: #333;
+    }
+    .responsive-image{
+
+        width: 100%;
+        height: 100%;
+        max-width: 100%; /* Ensures image never exceeds container width */
+    }
+
+    .post {
+        margin-bottom: 18px;
+        padding: 12px; /* Reduced padding for smaller screens */
+    }
+
+    .actions {
+        flex-direction: row; /* Keep actions in a row, but reduce space */
+        justify-content: space-between;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* CLANS CSS START */
+
+
+    /* Base Styles (for larger screens) */
+    .clans-list {
+        display: grid;  
+              
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+        padding: 20px;         
+        justify-items: center; 
+    }
+
+    /* Individual clan item card */
+    .clan-item {
+        text-decoration: none;    
+        background-color: #fff;            /* White background for each clan */
+        border: 1px solid #ddd;            /* Light gray border */
+        border-radius: 8px;                /* Rounded corners */
+        padding: 20px;                     /* Padding inside each clan card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow around the cards */
+        transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+        overflow: hidden;                  /* Hide anything outside the border-radius */
+        text-align: center;                /* Center text inside the clan item */
+    }
+
+    /* Hover effect on the clan item */
+    .clan-item:hover {
+        transform: translateY(-5px); /* Lift the card slightly on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    }
+
+    /* Clan name styling */
+    .clan-item h2 {
+        font-size: 1.8em;                /* Larger font size for clan name */
+        color: #333;                     /* Dark color for text */
+        margin-bottom: 15px;              /* Space below the clan name */
+        font-weight: bold;                /* Make the name bold */
+    }
+
+    /* Clan details styling */
+    .clan-item p {
+        font-size: 1.1em;                 /* Slightly larger font size for description */
+        color: #666;                      /* Light gray color for description text */
+        line-height: 1.6;                 /* Line height for better readability */
+        max-height: 100px;                /* Limit height of the text */
+        overflow: hidden;                 /* Hide overflow text */
+        text-overflow: ellipsis;          /* Add ellipsis if the description is too long */
+    }
+
+    /* Media Query for screens smaller than 450px */
+    @media (max-width: 450px) {
+        .clans-list {
+            grid-template-columns: 1fr;   
+            gap: 15px;                    
+            padding: 10px; 
+            margin-top: 10rem;              
+        }
+
+        .clan-item {
+            width: 95%;                  /* Full width for each item */
+            padding: 10px;                /* Reduced padding inside each clan item */
+        }
+
+        .clan-item h2 {
+            font-size: 1.5em;              /* Smaller font size for clan name */
+        }
+
+        .clan-item p {
+            font-size: 1em;                /* Smaller font size for description */
+            max-height: none;              /* Allow full description to be visible */
+        }
+    }
+
+    /* Media Query for screens between 451px and 767px */
+    @media (min-width: 451px) and (max-width: 767px) {
+        .clans-list {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* At least 200px per column */
+            gap: 15px;                    /* Reduced gap between items */
+        }
+
+        .clan-item {
+            width: 100%;                  /* Full width for each item */
+            padding: 18px;                /* Slightly reduced padding */
+        }
+
+        .clan-item h2 {
+            font-size: 1.6em;              /* Slightly smaller font size for clan name */
+        }
+
+        .clan-item p {
+            font-size: 1.1em;              /* Slightly smaller font size for description */
+            max-height: 120px;             /* Allow slightly more text to show */
+        }
+    }
+/* CLANS CSS END */
+
+
+
+
+
+
+
+
+
+
+
+/* ORIGIN CSS START */
+.origin-container {
+    width: 80%; /* Set width to 80% of the parent container */
+    max-width: 1200px; /* Set a max-width to ensure it doesn't stretch too wide */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding for some spacing */
+    background-color: #fff; /* Light background color for contrast */
+    border-radius: 8px; /* Rounded corners for a soft look */
+}
+
+/* Styling for each origin item */
+.origin-item {
+    background-color: #fff; /* White background for each origin item */
+    padding: 20px; /* Add padding inside each item */
+    margin-bottom: 20px; /* Space between origin items */
+    border-radius: 8px; /* Rounded corners for each item */
+     /* Soft shadow for a lifted effect */
+}
+
+/* Heading styling */
+.origin-item h2 {
+    font-size: 24px; /* Large title for the origin item */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Dark color for readability */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+/* Paragraph styling */
+.origin-item p {
+    font-size: 16px; /* Set the text size for the description */
+    line-height: 1.6; /* Improve line spacing for readability */
+    color: #555; /* Slightly lighter gray color for text */
+    margin: 0; /* Remove default margin from paragraphs */
+}
+
+@media screen and (min-width: 451px) and (max-width: 768px) {
+    .origin-container {
+        width: 100%;
+        padding: 10px;  /* Slightly more padding than on smaller screens */
+        margin-top: 6rem; /* Reduce top margin for better alignment */
+    }
+
+    .origin-item {
+        padding: 20px; /* Increase padding a bit for spacing */
+        margin-bottom: 20px; /* Slightly more space between items */
+    }
+
+    .origin-item h2 {
+        font-size: 18px; /* Slightly larger font size than mobile */
+        margin-bottom: 10px; /* Adjust margin for better alignment */
+    }
+
+    .origin-item p {
+        font-size: 24px; /* Increase the font size slightly for readability */
+        line-height: 1.6; /* Better line height for readability */
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .origin-container {
+        width: 100%;
+        padding: 5px; 
+        margin-top: 8.8rem;
+    }
+
+    .origin-item {
+        padding: 15px; /* Reduce padding in each item for a more compact look */
+        margin-bottom: 15px; /* Reduce margin between items */
+    }
+
+    .origin-item h2 {
+        font-size: 16px; /* Smaller font size for headings */
+        margin-bottom: 8px; /* Less space below the heading */
+    }
+
+    .origin-item p {
+        font-size: 22px; /* Reduce the paragraph text size */
+        line-height: 1.5; /* Adjust line height for better readability on small screens */
+    }
+}
+/* ORIGIN CSS END */
+
+
+
+
+
+
+/* QUOTES CSS START */
+
+
+/* Basic styles for the quote container */
+.quote-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+
+}
+
+/* Style for the quotes within the container */
+.quote-container h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.quote-container p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 20px 0; /* Add space below each quote */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quote-container {
+        padding: 15px;
+        max-width: 90%; /* Make container take up 90% of screen width */
+    }
+
+    .quote-container h2 {
+        font-size: 20px;
+    }
+
+    .quote-container p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 450px) {
+    .quote-container {
+        padding: 10px;
+        margin-top: 9.9rem;
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .quote-container h2 {
+        font-size: 18px;
+    }
+
+    .quote-container p {
+        font-size: 16px;
+    }
+}
+
+/* QUOTES CSS END */
+
+
+
+
+/* SIGN UP  CSS START */
+
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.text-center mb-4 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="checkbox"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="date"] {
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #cccccc;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms-container label {
+    font-size: 14px;
+    color: #555;
+}
+
+.already-have-account {
+    font-size: 14px;
+    text-align: center;
+}
+
+.already-have-account a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.already-have-account a:hover {
+    text-decoration: underline;
+}
+
+/* Error Styles */
+input.error {
+    border-color: #ff0000;
+}
+
+.form-group .error {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Responsive Styles */
+
+/* For screens 768px and below */
+@media (max-width: 768px) {
+
+    .sign-up-container {
+        padding: 15px;
+    }
+
+    .form-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .text-center.mb-4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="checkbox"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    input:focus {
+        border-color: #007bff;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .terms-container {
+        font-size: 14px;
+    }
+
+    .already-have-account {
+        font-size: 13px;
+    }
+
+    .already-have-account a {
+        font-size: 13px;
+    }
+
+    .form-group .error {
+        font-size: 11px;
+    }
+}
+
+/* For screens 450px and below (Mobile Phones) */
+@media (max-width: 450px) {
+
+    .sign-up-container {
+        margin-top: 3.8rem;
+        padding: 1px;
+    }
+
+    .form-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .text-center.mb-4 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="checkbox"] {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    input:focus {
+        border-color: #007bff;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .terms-container {
+        font-size: 13px;
+    }
+
+    .already-have-account {
+        font-size: 12px;
+    }
+
+    .already-have-account a {
+        font-size: 12px;
+    }
+
+    .form-group .error {
+        font-size: 10px;
+    }
+}
+
+
+/* SIGN UP  CSS END */
+
+
+
+
+/* LOGIN  CSS START */
+.login-btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #f8f4f4;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin-left: auto; /* Aligns the container to the right */
+    margin-right: 0;  /* Optional, but ensures no extra space on the right */
+}
+
+/* Title */
+.text-center.mb-4 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+.welcome-title-span {
+    font-size: 40px;
+    color: var(--accent-color);  /* Assuming --accent-color is a bright color */
+    font-weight: bold;           /* Make the text bold for better visibility */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  /* Adds subtle shadow for contrast */
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group .form-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Button */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-primary:disabled {
+    background-color: #cccccc;
+}
+
+/* Already Have Account */
+.already-have-account {
+    font-size: 14px;
+    text-align: center;
+    list-style: none;
+    
+}
+
+.already-have-account a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.already-have-account a:hover {
+    text-decoration: none;
+}
+
+/* Error Styles */
+.alert.alert-danger {
+    color: #ff0000;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.form-text.text-muted {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* For screens 768px and below */
+@media (max-width: 768px) {
+
+    /* Container */
+    .login-btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 100vh;
+        background-color: #f8f4f4;
+        padding: 15px;
+    }
+    
+    .form-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 90%;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-left: auto; /* Aligns the container to the right */
+        margin-right: 0;  /* Optional, but ensures no extra space on the right */
+    }
+    /* Title */
+    .text-center.mb-4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .welcome-title-span {
+        padding: 5px;
+        font-size: 22px;
+        color: var(--accent-color);  /* Assuming --accent-color is a bright color */
+        font-weight: 500;           /* Make the text bold for better visibility */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  /* Adds subtle shadow for contrast */
+    }
+
+    /* Form Elements */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group .form-label {
+        font-size: 14px;
+    }
+
+    .form-group .form-input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .form-group .form-input:focus {
+        border-color: #007bff;
+    }
+
+    /* Button */
+    .btn-primary {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Already Have Account */
+    .already-have-account {
+        font-size: 13px;
+        list-style: none;
+    }
+
+    .already-have-account a {
+        font-size: 13px;
+    }
+
+    /* Error Styles */
+    .alert.alert-danger {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .form-text.text-muted {
+        font-size: 13px;
+    }
+}
+
+/* For screens 450px and below */
+@media (max-width: 450px) {
+
+    /* Container */
+    .login-btn-container {
+        padding: 1px;
+        margin-top: 1.2rem;
+        margin-right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container {
+        padding: 15px;
+        margin-left: 0; 
+        margin-right: 0; 
+    }
+
+    /* Title */
+    .text-center.mb-4 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .welcome-title-span {
+        font-size: 26px;
+        color: var(--accent-color);  /* Assuming --accent-color is a bright color */
+        font-weight: bold;           /* Make the text bold for better visibility */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  /* Adds subtle shadow for contrast */
+    }
+    /* Form Elements */
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group .form-label {
+        font-size: 13px;
+    }
+
+    .form-group .form-input {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .form-group .form-input:focus {
+        border-color: #007bff;
+    }
+
+    /* Button */
+    .btn-primary {
+        padding: 8px;
+        font-size: 13px;
+        background-color: var(--primary-color);
+    }
+
+    /* Already Have Account */
+    .already-have-account {
+        font-size: 16px;
+        list-style: none;
+        padding-left: 0;    /* Removes any left padding */
+        text-align: left;
+        margin-top: 8px;
+        margin-right: 0px;
+        
+    }
+
+    .already-have-account a {
+        font-size: 12px;
+    }
+
+    /* Error Styles */
+    .alert.alert-danger {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .form-text.text-muted {
+        font-size: 12px;
+    }
+}
+
+/* LOGIN  CSS END */
+
+
+
+
+/* PROFILE  CSS START */
+
+
+/* Default styles for larger screens */
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic-container {
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-details li {
+    margin: 10px 0;
+}
+
+/* Media query for 768px (Tablets) */
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 90%;
+    }
+
+    .profile-header {
+        padding: 15px;
+    }
+
+    .profile-pic-container {
+        margin-bottom: 15px;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details {
+        padding: 15px;
+    }
+
+    .profile-details ul {
+        padding-left: 20px;
+    }
+
+    .profile-details li {
+        margin: 8px 0;
+    }
+}
+
+/* Media query for 450px (Mobile devices) */
+@media (max-width: 450px) {
+    .profile-container {
+        max-width: 95%;
+        margin-top: 11.9rem;
+    }
+
+    .profile-header {
+        padding: 10px;
+      
+    }
+
+    .profile-pic-container {
+        margin-bottom: 10px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-details {
+        padding: 10px;
+    }
+
+    .profile-details ul {
+        padding-left: 15px;
+    }
+
+    .profile-details li {
+        margin: 5px 0;
+    }
+}
+
+/* PROFILE  CSS END */
+
+
+
+
+
+
+
+/* Apply styles only for screens wider than 1000px (desktop screens) */
+
+
+/* Container for the three columns */
+.detail-blog-container {
+    display: flex;
+    gap: 10px;
+    
+  }
+  
+  /* Left and Right Sidebars */
+  .detail-left-sidebar,
+  .detail-right-sidebar {
+    flex: 1;
+    max-width: 20%;
+  }
+  
+  /* Main Content */
+  .detail-main-content {
+    flex: 2;
+    max-width: 60%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .detail-blog-container {
+      flex-direction: column;
+    }
+  
+    .detail-left-sidebar,
+    .detail-main-content,
+    .detail-right-sidebar {
+      max-width: 100%;
+    }
+  }
+
+
+
+
+     /* post-sdetail- side bar css */
+
+/* Styling for Left Sidebar */
+.detail-left-sidebar {
+  background-color: #f9f9f9; /* Light background for sidebar */
+  padding: 2px; /* Padding for inner spacing */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+}
+
+.detail-left-sidebar h3 {
+  font-size: 1.5rem; /* Larger heading */
+  color: #333; /* Dark text for contrast */
+  margin-bottom: 15px; /* Space below the heading */
+  font-weight: bold;
+}
+
+/* Styling for the List */
+.detail-left-sidebar ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+.detail-left-sidebar li {
+  margin-bottom: 15px; /* Space between list items */
+  display: flex; /* Use flexbox to align image and title horizontally */
+  align-items: flex-start; /* Vertically center the content */
+  gap: 15px; /* Add space between image and title */
+  justify-content: flex-start; /* Ensure all content starts from the left */
+}
+
+.detail-left-sidebar .post-image {
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.detail-left-sidebar .responsive-image {
+  width: 50px; /* Set a fixed size for the image */
+  height: 50px; /* Set a fixed size for the image */
+  object-fit: cover; /* Ensure the image covers the container without stretching */
+  border-radius: 5px; /* Optional: rounded corners for the image */
+}
+
+/* Styling for the Links */
+.detail-left-sidebar a {
+    color: #007BFF; /* Professional blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14.5px; /* Standard font size */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    max-width: calc(100% - 10px); /* Ensure the title doesn't overflow */
+    display: block; /* Ensure the link takes up the full available width */
+    text-align: left; /* Align the text to the left */
+  }
+
+.detail-left-sidebar a:hover {
+  color: #0056b3; /* Darker blue when hovered */
+  transform: translateX(5px); /* Subtle shift effect for interactivity */
+}
+
+/* Optional: Styling for empty message */
+.detail-left-sidebar li:empty {
+  color: #888; /* Gray color for empty message */
+  font-style: italic; /* Italicize the text */
+  text-align: center; /* Center the message */
+}
+
+.post-image p{
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.detail-left-sidebar .detail-title-view {
+    display: flex;
+    flex-direction: column; /* Stack the content in a vertical column */
+    justify-content: flex-start; /* Align the content to the top */
+    gap: 5px; /* Add space between title and viewed count */
+  }
+  
+  .detail-left-sidebar .detail-title-view a {
+    color: #007BFF; /* Blue color for the link */
+    text-decoration: none; /* Remove underline from the link */
+    font-size: 14px; /* Standard font size */
+   
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .detail-left-sidebar .detail-title-view a:hover {
+    color: #0056b3; /* Darker blue when hovered */
+  }
+  
+  .detail-left-sidebar .detail-title-view p {
+    font-size: 12px; /* Smaller text for the "Viewed" count */
+    color: #555; /* Dark gray text */
+    margin: 0; /* Remove default margin from paragraph */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* COMMENTS BOX AND BTN CSS START  18-12-2024 */
+.comments {
+    margin-top: 20px;
+  }
+  .comments-user-names{
+    text-decoration: none;
+  }
+  .comment-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  #comment-content {
+    width: 100%;
+    max-width: 500px; /* Responsive width with a max-width */
+    height: 80px; /* Fixed height */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Prevent resizing */
+  }
+  
+  #submit-comment {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #submit-comment:hover {
+    background-color: #0056b3;
+  }
+  
+  .comment-list {
+    margin-top: 20px;
+  }
+  
+  .comment p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+/* For screens smaller than or equal to 768px */
+@media (max-width: 768px) {
+    .comment-form {
+        flex-direction: column;  /* Stack form elements vertically */
+        gap: 8px; /* Adjust gap for smaller screens */
+    }
+
+    #comment-content {
+        max-width: 100%;  /* Allow the comment box to take full width */
+    }
+
+    #submit-comment {
+        width: 100%;  /* Make the submit button full width */
+    }
+
+    .comment p {
+        font-size: 16px; /* Increase font size for better readability on smaller screens */
+    }
+}
+
+/* For screens smaller than or equal to 450px */
+@media (max-width: 450px) {
+    .comment-form {
+        gap: 5px;  /* Reduce gap for even smaller screens */
+    }
+
+    #comment-content {
+        max-width: 100%;  /* Ensure comment box spans full width */
+        height: 60px;  /* Reduce height for smaller screens */
+    }
+
+    #submit-comment {
+        padding: 8px 12px;  /* Adjust padding for smaller screens */
+        font-size: 12px;  /* Adjust font size for smaller screens */
+    }
+
+    .comment p {
+        font-size: 12px; /* Make font smaller for very small screens */
+    }
+}  
+/* COMMENTS BOX AND BTN CSS END  18-12-2024 */
+
+
+
+
+
+
+
+
+/*SHARE BTN CSS START  18-12-2024 */
+.share-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the Dropdown Menu */
+.share-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.share-menu a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.share-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Position the share button */
+.share-btn-container {
+    position: relative;
+}
+/*SHARE BTN CSS START  18-12-2024 */
+
+
+
+
+
+
+/*SIDE BAR CSS START  30-12-2024 */
+
+
+
+/* Apply styles for screens with a minimum width of 760px */
+@media screen and (min-width: 500px) {
+
+    /* Main Container */
+    .index-main {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Content Container */
+    .content-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Main Content (70%) */
+    .main-content {
+        width: 70%;
+        padding-right: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+
+
+    /* Sidebar (30%) */
+    .sidebar {
+        width: 30%;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #f4f4f4;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding-top: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Sidebar titles */
+    .sidebar-title {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    /* Sidebar list styling */
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Individual sidebar list items */
+    .sidebar-item {
+        margin-bottom: 10px;
+    }
+
+    /* Sidebar links */
+    .sidebar-link {
+        text-decoration: none;
+        color: #007bff;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover effect on links */
+    .sidebar-link:hover {
+        color: #0056b3;
+    }
+
+    /* Sponsored section */
+    .sidebar-sponsored {
+        background-color: #e9f7f6;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    /* Sponsored title */
+    .sidebar-sponsored-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Sponsored description */
+    .sidebar-sponsored-desc {
+        font-size: 14px;
+        color: #666;
+        margin-top: 10px;
+    }
+}
+
+
+/* Apply styles for smaller screens (below 760px) */
+@media screen and (max-width: 759px) {
+    .main-content {
+        width: 100% !important;  /* Make main content 100% width on smaller screens */
+    }
+
+    /* Sidebar will be hidden or adjusted */
+    .sidebar {
+        display: none;
+      
+    }
+}

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ post.title }} - the kalenjins</title>
+     
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+     {% load custom_filters %}
+
+
+</head>
+<body>
+
+  
+  <main>
+    <div class="detail-blog-container">
+      
+      <!-- Left Sidebar (25%) -->
+      <div class="detail-left-sidebar">
+        <h3>Most Viewed</h3>
+        <ul>
+          {% for post in recent_posts %}
+            <li>
+
+              <div class="post-image">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="responsive-image">
+                
+              </div>
+
+              <div class="detail-title-view">
+                 <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                 <p> Viewed:{{ post.read_count }} times    | {{ post.published_at | timesince_custom }} </p>
+              </div>
+              
+            </li>
+          {% empty %}
+            <li>No recent posts available.</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+
+
+
+
+      
+      <!-- Main Content (50%) -->
+      <div class="detail-main-content">
+        <h2>{{ post.title }}</h2>
+        <p><strong>{{ post.user }}</strong> | {{ post.published_at | timesince_custom }}</p>
+        
+        {% if post.image %}
+        <div class="post-image">
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" class="responsive-image">
+        </div>
+        {% endif %}
+        
+        <div class="content">
+          <p>{{ post.content|linebreaks|safe }}</p>
+        </div>
+  
+        <div class="actions">
+          <!-- Like and Comment Buttons in the same row -->
+          <div class="buttonz-container">
+            <button class="likez-btn" data-id="{{ post.id }}">
+              Like (<span id="like-count">{{ post.like_set.count }}</span>)
+            </button>
+            <button class="commentz-btn" data-id="{{ post.id }}">
+              Comments (<span id="comment-count-{{ post.id }}">{{ post.comment_set.count }}</span>)
+            </button>
+            <button class="sharez-btn">
+              Share 
+            </button>
+          </div>
+        </div>
+        
+        <!-- Comments Section -->
+        <div class="comments">
+          <!-- Initial Comments List -->
+          <div id="comment-list">
+            {% for comment in comments %}
+            <div class="comment">
+              <p data-truncated-content="{{ comment.content|truncatewords:50 }}" data-full-content="{{ comment.content }}">
+                <strong>
+                  <a href="{% url 'profile_user_by_id' comment.user.id %}" class="comments-user-names">
+                    {{ comment.user.first_name }} {{ comment.user.last_name }}
+                  </a>
+                </strong>&nbsp; {{ comment.published_at | timesince_custom }}: <br>
+                
+                <!-- Truncate Comment Content if Too Long -->
+                {% if comment.content|length > 50 %}
+                {{ comment.content|truncatewords:50 }}
+                <a href="#" class="read-more">Read More</a>
+                {% else %}
+                {{ comment.content|linebreaks }}
+                {% endif %}
+              </p>
+              <!-- Like button and like count -->
+              <a href="#" class="like-link" data-comment-id="{{ comment.id }}">
+                Like <span class="like-count">{{ comment.commentlike_set.count }}</span>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+  
+          <!-- Load More Comments Button -->
+          {% if has_next %}
+            <a href="javascript:void(0);" id="load-more-comments" style="display: block;" data-post-id="{{ post.id }}" data-current-page="{{ current_page }}">
+              Read more comments...
+            </a>
+          {% else %}
+            <a href="#" id="load-more-comments" style="display: none;">
+              No more comments
+            </a>
+          {% endif %}
+        </div>
+  
+        {% if user.is_authenticated %}
+        <!-- Comment Form -->
+        <div class="comment-form">
+          <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+          <input type="hidden" id="comment-user" value="{{ user.first_name }} {{ user.last_name }}">
+          <textarea id="comment-content" placeholder="Comment..."></textarea>
+          <button id="submit-comment" data-post-id="{{ post.id }}">Comment</button>
+        </div>
+        {% else %}
+        <p>You must be logged in to comment.</p>
+        {% endif %}
+      </div>
+      
+
+            
+
+
+      <!-- Right Sidebar (25%) -->
+      <div class="detail-right-sidebar">
+        <h3>Sponsored</h3>
+        <div class="sponsored-item">
+          <h4>{{ sponsored_content.title }}</h4>
+          <p>{{ sponsored_content.description }}</p>
+          <a href="{{ sponsored_content.link }}" target="_blank">Check it out!</a>
+        </div>
+      </div>
+      
+    </div>
+</main>
+
+  
+  
+  <!-- Inside your HTML template, within the tag -->
+<script>
+  var profileUrlTemplate = "{% url 'profile_user_by_id' 0 %}";
+</script>
+
+
+  <!-- Include the external JavaScript file at the end of the body -->
+  {% load static %}
+ <script src="{% static 'js/scripts.js' %}"></script>
+  
+</body>
+</html>
+{% endblock %}
